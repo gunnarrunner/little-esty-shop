@@ -1,0 +1,7 @@
+<h1> Bulk Discount ID:<% @bulk_discount.id %> show page </h1>
+</br>
+
+The Attributes for this bulk discount:
+<h3> Bulk Discount Percentage Discount:<%= @bulk_discount.percentage_discount %> </h3>
+<h3> Bulk Discount Quantity Threshold:<%= @bulk_discount.quantity_threshold %> </h3>
+<%= button_to "Edit this Bulk Discount", edit_merchant_bulk_discount_path(@merchant, @bulk_discount), method: :get %>

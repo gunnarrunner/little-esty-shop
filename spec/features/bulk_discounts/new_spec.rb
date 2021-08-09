@@ -3,7 +3,7 @@ RSpec.describe 'it can go to a new form and make a new bulk discount' do
   before :each do
     visit "/merchants/#{@merchant1.id}/bulk_discounts/new"
   end
-  it 'can click a link on the admin merchant index page and be taken to new form' do
+  it 'can click a link on the bulk discounts index page and be taken to new form' do
     visit "/merchants/#{@merchant1.id}/bulk_discounts"
     
     click_link("Create a new bulk discount")
@@ -11,7 +11,7 @@ RSpec.describe 'it can go to a new form and make a new bulk discount' do
     expect(current_path).to eq("/merchants/#{@merchant1.id}/bulk_discounts/new")
   end
 
-  it 'can fill and create a new merchant thorugh the admin merchant path' do
+  it 'can fill and create a new bulk discount' do
 
     fill_in("Percentage Discount", with: 0.50)
     fill_in("Quantity Threshold", with: 75)
@@ -34,7 +34,7 @@ RSpec.describe 'it can go to a new form and make a new bulk discount' do
       
   end
 
-  it 'does not fill out a name and redirects to the new form and gives a flash message' do
+  it 'does not fill out a portion of the form and redirects to the new form and gives a flash message' do
     fill_in("Percentage Discount", with: "")
     fill_in("Quantity Threshold", with: "Hello")
 
