@@ -22,7 +22,7 @@ RSpec.describe '' do
     merchant = Merchant.last
 
     within "#disabled-admin-merchants-#{merchant.id}" do
-      expect(page).to have_content("Suzie")
+      expect(page).to have_content("#{merchant.name}")
     end
       
   end

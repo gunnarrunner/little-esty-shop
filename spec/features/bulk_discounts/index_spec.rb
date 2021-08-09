@@ -17,35 +17,35 @@ RSpec.describe 'it can describe a bulk discounts index page' do
       within "#associated-bulk-discount-#{@bulk_discount1.id}" do
         expect(page).to have_content("Percentage Discount #{@bulk_discount1.percentage_discount * 100}%")
         expect(page).to have_content("threshold of #{@bulk_discount1.quantity_threshold}")
-        expect(page).to_not have_content("#{@bulk_discount5.percentage_discount * 100}%")
-        expect(page).to_not have_content("#{@bulk_discount5.quantity_threshold}")
+        expect(page).to_not have_content("Percentage Discount #{@bulk_discount5.percentage_discount * 100}%")
+        expect(page).to_not have_content("threshold of #{@bulk_discount5.quantity_threshold}")
       end
 
       within "#associated-bulk-discount-#{@bulk_discount2.id}" do
         expect(page).to have_content("Percentage Discount #{@bulk_discount2.percentage_discount * 100}%")
         expect(page).to have_content("threshold of #{@bulk_discount2.quantity_threshold}")
-        expect(page).to_not have_content("#{@bulk_discount3.percentage_discount * 100}%")
-        expect(page).to_not have_content("#{@bulk_discount3.quantity_threshold}")
-        expect(page).to_not have_content("#{@bulk_discount5.percentage_discount * 100}%")
-        expect(page).to_not have_content("#{@bulk_discount5.quantity_threshold}")
+        expect(page).to_not have_content("Percentage Discount #{@bulk_discount3.percentage_discount * 100}%")
+        expect(page).to_not have_content("threshold of #{@bulk_discount3.quantity_threshold}")
+        expect(page).to_not have_content("Percentage Discount #{@bulk_discount5.percentage_discount * 100}%")
+        expect(page).to_not have_content("threshold of #{@bulk_discount5.quantity_threshold}")
       end
 
       within "#associated-bulk-discount-#{@bulk_discount4.id}" do
         expect(page).to have_content("Percentage Discount #{@bulk_discount4.percentage_discount * 100}%")
         expect(page).to have_content("threshold of #{@bulk_discount4.quantity_threshold}")
-        expect(page).to_not have_content("#{@bulk_discount3.percentage_discount * 100}%")
-        expect(page).to_not have_content("#{@bulk_discount3.quantity_threshold}")
-        expect(page).to_not have_content("#{@bulk_discount5.percentage_discount * 100}%")
-        expect(page).to_not have_content("#{@bulk_discount5.quantity_threshold}")
+        expect(page).to_not have_content("Percentage Discount #{@bulk_discount3.percentage_discount * 100}%")
+        expect(page).to_not have_content("threshold of #{@bulk_discount3.quantity_threshold}")
+        expect(page).to_not have_content("Percentage Discount #{@bulk_discount5.percentage_discount * 100}%")
+        expect(page).to_not have_content("threshold of #{@bulk_discount5.quantity_threshold}")
       end
 
       within "#associated-bulk-discount-#{@bulk_discount6.id}" do
         expect(page).to have_content("Percentage Discount #{@bulk_discount6.percentage_discount * 100}%")
         expect(page).to have_content("threshold of #{@bulk_discount6.quantity_threshold}")
-        expect(page).to_not have_content("#{@bulk_discount3.percentage_discount * 100}%")
-        expect(page).to_not have_content("#{@bulk_discount3.quantity_threshold}")
-        expect(page).to_not have_content("#{@bulk_discount5.percentage_discount * 100}%")
-        expect(page).to_not have_content("#{@bulk_discount5.quantity_threshold}")
+        expect(page).to_not have_content("Percentage Discount #{@bulk_discount3.percentage_discount * 100}%")
+        expect(page).to_not have_content("threshold of #{@bulk_discount3.quantity_threshold}")
+        expect(page).to_not have_content("Percentage Discount #{@bulk_discount5.percentage_discount * 100}%")
+        expect(page).to_not have_content("threshold of #{@bulk_discount5.quantity_threshold}")
       end
     end    
   end
