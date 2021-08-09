@@ -4,7 +4,7 @@ RSpec.describe 'Can destroy the bulk discount and delete them from the table' do
     visit "/merchants/#{@merchant1.id}/bulk_discounts"
   end
 
-  it 'can delete an artist from the show page' do
+  it 'can delete an bulk discount from the bulk discounts index page' do
 
     within "#associated-bulk-discounts-#{@merchant1.id}" do
       within "#associated-bulk-discount-#{@bulk_discount2.id}" do
