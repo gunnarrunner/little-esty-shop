@@ -11,10 +11,9 @@ class Invoice < ApplicationRecord
     invoice_items.sum('quantity * unit_price')
   end
 
-  # def invoice_discounted_revenue
-  #   require "pry"; binding.pry
-  #   quantity_threshold
-  # end
+  def quantity
+    require "pry"; binding.pry
+  end
 
   def self.incomplete_invoices_by_date
     joins(:invoice_items)

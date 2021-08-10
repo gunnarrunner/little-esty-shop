@@ -58,11 +58,11 @@ RSpec.describe Invoice do
     expect(Invoice.incomplete_invoices_by_date.length).to eq(13)
   end
 
-  # describe 'instance methods' do
-  #   describe '#invoice_discounted_revenue' do
-  #     it 'can calculate the discounted revenue for a invoice' do
-  #       expect(@invoice100.invoice_discounted_revenue).to eq(224000)
-  #     end
-  #   end
-  # end
+  describe 'instance methods' do
+    describe '#quantity' do
+      it 'can calculate the quantity of items from the invoice item for an invoice' do
+        expect(@invoice100.quantity).to eq()
+      end
+    end
+  end
 end
