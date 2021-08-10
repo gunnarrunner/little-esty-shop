@@ -17,6 +17,10 @@ class Merchant < ApplicationRecord
             .limit(5)
   end
 
+  # def quantity_threshold
+  #   bulk_discounts.minumum(:quantity_threshold)
+  # end
+
   def self.enabled_merchants
     where("status = ?", "enabled")
   end
