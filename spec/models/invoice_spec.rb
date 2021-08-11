@@ -57,4 +57,8 @@ RSpec.describe Invoice do
   it 'returns list of invoices from old to new with invoice_items that have not been shipped' do
     expect(Invoice.incomplete_invoices_by_date.length).to eq(13)
   end
+
+  it 'can give a unique merchant for this invoice' do
+    expect(@invoice100.unique_merchant).to eq(@merchant8)
+  end
 end
