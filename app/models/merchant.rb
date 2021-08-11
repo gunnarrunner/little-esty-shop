@@ -17,6 +17,28 @@ class Merchant < ApplicationRecord
             .limit(5)
   end
 
+  def quantity_threshold
+    bulk_discounts.minimum(:quantity_threshold)
+  end
+
+  def maximum_discount(quantity)
+    bulk_discounts.where('quantity_threshold <= ?', quantity).maximum(:percentage_discount)
+  end
+
+  def total_discount_revenue(invoice_id)
+    merchant_invoice_items = self.invoice_items.where('invoice_id = ?', invoice_id)
+
+    discounted_revenue = 0
+    merchant_invoice_items.each do |item|
+      if item.quantity >= self.quantity_threshold
+        discounted_revenue += ((item.quantity * item.unit_price) - ((item.quantity * item.unit_price) * (self.maximum_discount(item.quantity))))
+      else
+        discounted_revenue += (item.quantity * item.unit_price)
+      end
+    end
+    discounted_revenue
+  end
+
   def self.enabled_merchants
     where("status = ?", "enabled")
   end

@@ -36,10 +36,11 @@ end
 RSpec.configure do |config|
   config.before(:each) do
     Transaction.destroy_all
-    Customer.destroy_all
-    Invoice.destroy_all
     InvoiceItem.destroy_all
+    Invoice.destroy_all
+    Customer.destroy_all
     Item.destroy_all
+    BulkDiscount.destroy_all
     Merchant.destroy_all
 
     #Merchants
