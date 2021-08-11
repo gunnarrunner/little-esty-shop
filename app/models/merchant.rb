@@ -30,7 +30,9 @@ class Merchant < ApplicationRecord
 
     discounted_revenue = 0
     merchant_invoice_items.each do |item|
-      if item.quantity >= self.quantity_threshold
+      if self.quantity_threshold == nil
+        discounted_revenue += (item.quantity * item.unit_price)
+      elsif item.quantity >= self.quantity_threshold
         discounted_revenue += ((item.quantity * item.unit_price) - ((item.quantity * item.unit_price) * (self.maximum_discount(item.quantity))))
       else
         discounted_revenue += (item.quantity * item.unit_price)
