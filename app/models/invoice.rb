@@ -11,10 +11,6 @@ class Invoice < ApplicationRecord
     invoice_items.sum('quantity * unit_price')
   end
 
-  def quantity
-    require "pry"; binding.pry
-  end
-
   def self.incomplete_invoices_by_date
     joins(:invoice_items)
     .where.not(invoice_items: {status: :shipped})

@@ -57,12 +57,4 @@ RSpec.describe Invoice do
   it 'returns list of invoices from old to new with invoice_items that have not been shipped' do
     expect(Invoice.incomplete_invoices_by_date.length).to eq(13)
   end
-
-  describe 'instance methods' do
-    describe '#quantity' do
-      it 'can calculate the quantity of items from the invoice item for an invoice' do
-        expect(@invoice100.quantity).to eq()
-      end
-    end
-  end
 end

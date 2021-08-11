@@ -36,10 +36,11 @@ end
 RSpec.configure do |config|
   config.before(:each) do
     Transaction.destroy_all
-    Customer.destroy_all
-    Invoice.destroy_all
     InvoiceItem.destroy_all
+    Invoice.destroy_all
+    Customer.destroy_all
     Item.destroy_all
+    BulkDiscount.destroy_all
     Merchant.destroy_all
 
     #Merchants
@@ -55,7 +56,7 @@ RSpec.configure do |config|
     @bulk_discount1 = BulkDiscount.create!(percentage_discount: 0.2, quantity_threshold: 20, merchant_id: @merchant1.id)
     @bulk_discount2 = BulkDiscount.create!(percentage_discount: 0.3, quantity_threshold: 30, merchant_id: @merchant1.id)
     @bulk_discount3 = BulkDiscount.create!(percentage_discount: 0.2, quantity_threshold: 20, merchant_id: @merchant3.id)
-    # @bulk_discount4 = BulkDiscount.create!(percentage_discount: 0.35, quantity_threshold: 40, merchant_id: @merchant1.id)
+    @bulk_discount4 = BulkDiscount.create!(percentage_discount: 0.35, quantity_threshold: 40, merchant_id: @merchant1.id)
     @bulk_discount5 = BulkDiscount.create!(percentage_discount: 0.25, quantity_threshold: 25, merchant_id: @merchant2.id)
     @bulk_discount6 = BulkDiscount.create!(percentage_discount: 0.1, quantity_threshold: 10, merchant_id: @merchant1.id)
 

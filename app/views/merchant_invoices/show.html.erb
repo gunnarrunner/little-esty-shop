@@ -7,6 +7,7 @@
   <p>Status: <%= @invoice.status %></p>
   <p>Created on: <%= @invoice.created_at.strftime("%A, %B %d, %Y") %></p>
   <p>Total Revenue: <%= number_to_currency(@invoice.invoice_items.total_revenue / 100) %>
+  <p>Total Discounted Revenue: <%= number_to_currency(@merchant.total_discount_revenue(@invoice.id) / 100) %>
 </div><br>
 
 <div id='customer'>
